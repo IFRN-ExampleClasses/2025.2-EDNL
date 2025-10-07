@@ -50,7 +50,7 @@ def main():
 
    # Tamanho
    print(f"\n>>> Tamanho atual: {d.tamanho()}")
-
+   
    # Buscar por código
    print("\n>>> Buscas:")
    for codigo in ["TEC.0007", "TEC.0022", "TEC.9999"]:
