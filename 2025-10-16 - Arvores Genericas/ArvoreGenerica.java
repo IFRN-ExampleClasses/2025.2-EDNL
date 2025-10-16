@@ -16,7 +16,11 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
    @Override
    public void imprimirPreOrdem() {
       System.out.println("--- Caminhamento em Pré-Ordem ---");
-      imprimirPreOrdemRecursivo(this.raiz, 0);
+      if (isVazia()) {
+         System.out.println("Árvore vazia.");
+      } else {
+         imprimirPreOrdemRecursivo(this.raiz, 0);
+      }      
    }
 
    private void imprimirPreOrdemRecursivo(No<T> noAtual, int nivel) {
@@ -31,7 +35,11 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
    @Override
    public void imprimirPosOrdem() {
       System.out.println("\n--- Caminhamento em Pós-Ordem ---");
-      imprimirPosOrdemRecursivo(this.raiz, 0);
+      if (isVazia()) {
+         System.out.println("Árvore vazia.");
+      } else {
+         imprimirPosOrdemRecursivo(this.raiz, 0);
+      }
    }
 
    private void imprimirPosOrdemRecursivo(No<T> noAtual, int nivel) {
@@ -39,5 +47,12 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
          imprimirPosOrdemRecursivo(filho, nivel + 1);
       }
       System.out.println("  ".repeat(nivel) + "|- " + noAtual.getDado());
+   }
+
+   // ------------------------------------------------------------
+   // Verifica se a árvore está vazia (não possui raiz)
+   @Override
+   public boolean isVazia() {
+      return this.raiz == null;
    }
 }
