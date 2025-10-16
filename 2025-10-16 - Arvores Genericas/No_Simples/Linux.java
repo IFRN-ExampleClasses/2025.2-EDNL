@@ -1,8 +1,12 @@
-// Arquivo: Linux.java
+/*
+   Arquivo...: Linux.java
+   Finalidade: Exemplo prático de uso da árvore genérica
+               para representar a estrutura de diretórios do Linux.
+*/
 public class Linux {
    public static void main(String[] args) {
       // Criando os nós individuais
-      No<String> raiz = new No<>("Árvore de Diretórios do Linux");
+      No<String> raiz = new No<>("/root");
       No<String> diretorioHome = new No<>("home");
       No<String> diretorioEtc  = new No<>("etc");
       No<String> diretorioBin  = new No<>("bin");

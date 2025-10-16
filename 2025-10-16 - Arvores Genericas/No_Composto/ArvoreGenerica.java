@@ -4,15 +4,16 @@
                pode ter múltiplos filhos.
                Gerencia a árvore como um todo, começando pela raiz.
 */
-public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
+public class ArvoreGenerica<T> {
    private No<T> raiz;
 
    public ArvoreGenerica(No<T> raiz) {
       this.raiz = raiz;
    }
 
-   // ------------------------------------------------------------
-   // Inicia o caminhamento em Pré-Ordem (Raiz -> Filhos)
+   /**
+    * Inicia o caminhamento em Pré-Ordem (Raiz -> Filhos).
+    */
    public void imprimirPreOrdem() {
       System.out.println("--- Caminhamento em Pré-Ordem ---");
       imprimirPreOrdemRecursivo(this.raiz, 0);
@@ -25,8 +26,9 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
       }
    }
 
-   // ------------------------------------------------------------
-   // Inicia o caminhamento em Pós-Ordem (Filhos -> Raiz)
+   /**
+    * Inicia o caminhamento em Pós-Ordem (Filhos -> Raiz).
+    */
    public void imprimirPosOrdem() {
       System.out.println("\n--- Caminhamento em Pós-Ordem ---");
       imprimirPosOrdemRecursivo(this.raiz, 0);
