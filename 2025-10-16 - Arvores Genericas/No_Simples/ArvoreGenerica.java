@@ -13,6 +13,7 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
 
    // ------------------------------------------------------------
    // Inicia o caminhamento em Pré-Ordem (Raiz -> Filhos)
+   @Override
    public void imprimirPreOrdem() {
       System.out.println("--- Caminhamento em Pré-Ordem ---");
       imprimirPreOrdemRecursivo(this.raiz, 0);
@@ -27,6 +28,7 @@ public class ArvoreGenerica<T> implements ArvoreGenericaInterface<T> {
 
    // ------------------------------------------------------------
    // Inicia o caminhamento em Pós-Ordem (Filhos -> Raiz)
+   @Override
    public void imprimirPosOrdem() {
       System.out.println("\n--- Caminhamento em Pós-Ordem ---");
       imprimirPosOrdemRecursivo(this.raiz, 0);
