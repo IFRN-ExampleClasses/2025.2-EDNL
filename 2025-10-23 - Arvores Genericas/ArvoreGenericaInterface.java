@@ -60,14 +60,22 @@ public interface ArvoreGenericaInterface<T> {
    int getTamanho();
 
    /**
-    * Retorna a altura total da árvore.
+    * Retorna a altura de um nó da árvore.
+    * @param dado O dado do nó cuja altura será calculada.
+    * @return A altura do nó, ou -1 se não encontrado.
+    *
+    * se o nó não for informado, retorna a altura da árvore inteira.
     */
-   int getAltura();
+   int getAltura(T dado);
 
    /**
-    * Retorna o nó raiz da árvore.
+    * Retorna o nó raiz de um nó da árvore.
+    * @param dado O dado do nó cuja raiz será buscada.
+    * @return O nó raiz do nó especificado, ou null se não encontrado.
+    *
+    * se o nó não for informado, retorna a raiz da árvore.
     */
-   NoArvore<T> getRaiz();
+   NoArvore<T> getRaiz(T dado);
    
    /**
     * Verifica se a árvore está vazia (não possui raiz).
