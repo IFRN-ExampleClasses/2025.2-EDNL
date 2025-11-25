@@ -10,30 +10,42 @@ public class TestarArvoreAVL {
       System.out.println("=== Teste de Carga para Árvore AVL ===");
 
       try {
+         // ----------------------------------------------------------------------
          // Configuração dos dados de entrada
          System.out.print("Quantidade de nós (números) a inserir: ");
-         int qtd = scanner.nextInt();
+         int intQuantidade = scanner.nextInt();
 
          System.out.print("Valor Mínimo: ");
-         int min = scanner.nextInt();
+         int intValorMinimo = scanner.nextInt();
 
          System.out.print("Valor Máximo: ");
-         int max = scanner.nextInt();
+         int intValorMaximo = scanner.nextInt();
 
+
+         // ----------------------------------------------------------------------
          // 1. Gera os números usando a classe auxiliar
-         GeradorDeNumeros gerador = new GeradorDeNumeros(qtd, min, max);
+         GeradorDeNumeros gerador = new GeradorDeNumeros(intQuantidade, intValorMinimo, intValorMaximo);
          List<Integer> chavesParaInserir = gerador.getResultado();
 
+
+         // ----------------------------------------------------------------------
          // 2. Exibe os números gerados (que seriam inseridos na árvore)
          System.out.println("\nNúmeros gerados (sem repetição):");
          System.out.println(chavesParaInserir);
 
-         // TODO: Aqui você chamaria sua classe ArvoreAVL
-         // Exemplo:
-         // ArvoreAVL arvore = new ArvoreAVL();
-         // for (Integer valor : chavesParaInserir) {
-         //    arvore.inserir(valor);
-         // }
+
+         // ----------------------------------------------------------------------
+         // 3. Montando a árvore AVL
+
+         // Usaremos <Integer> que já implementa Comparable
+         ArvoreAVL<Integer> arvoreTeste = null;
+         arvoreTeste = new ArvoreAVL<>();
+         for (Integer valor : chavesParaInserir) {
+            arvoreTeste.inserirNo(valor);
+         }
+
+         //arvoreTeste.exibirArvoreTerminal();
+         //arvoreTeste.exibirArvoreGrafica();
 
       } catch (IllegalArgumentException e) {
          System.err.println("Erro na configuração: " + e.getMessage());
